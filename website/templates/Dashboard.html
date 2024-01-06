@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard</title>
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+ <link rel="stylesheet" href="../static/css/homestyle.css">
+    <script src="../static/js/script.js"defer></script>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-plain.css" />
+<link rel= "stylesheet" href= url_for('static', filename='styles.css')>
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+    <link rel="stylesheet" href="../static/css/homestyle.css">
+    <script src="../static/js/script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="sidebar-header">
+        <a class="logo-wrapper">
+          <img src="../static/assest/google.svg" alt="Logo">
+            <h2 class="hidden">Flask App</h2>
+        </a>
+        <button class="toggle-btn">
+          <img src="../static/assest/expand.svg" alt="expand button">
+        </button>
+      </div>
+
+
+      <div class="sidebar-links">
+        <a class="link " href="/">
+          <img src="../static/assest/home.svg" alt="">
+          <span class="hidden">Home</span>
+        </a>
+
+        <a class="link active">
+          <img src="../static/assest/dashboard.svg" alt="">
+          <span class="hidden">Dashboard</span>
+        </a>
+        </li>
+        <a class="link"  href="/Task-note">
+          <img src="../static/assest/tasks.svg" alt="">
+          <span class="hidden">Tasks</span>
+        </a>
+      <a class="link " href="/telegram">
+          <img src="../static/assest/telegram.svg" alt="">
+          <span class="hidden">Telegram </span>
+        </a>
+      </div>
+
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-links">
+
+          <a class="link" href="/setting">
+            <img src="../static/assest/settings.svg" alt="">
+            <span class="hidden">Settings</span>
+          </a>
+                <a class="link" href="/logout">
+          <img src="../static/assest/logout.svg" alt="">
+          <span class="hidden">Logout</span>
+        </a>
+        </div>
+
+        <div class="user-profile">
+          <div class="user-avatar">
+            <img src="../static/assest/profile-pic2.jpg" alt="">
+          </div>
+          <div class="user-details hidden">
+            <p class="username">{{ user.first_name }}</p>
+            <p class="user-email">{{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<div class="prof">
+  <div class="card1">
+      <div class="image-dashboard">
+        <img src="../static/assest/prof%20(2).png" alt="Profile Photo">
+      </div>
+      <div class="content-dashboard">
+        <h2 class="profile-name1">{{ user.first_name }}</h2>
+        <p class="job-title">{{ user.email}}</p>
+        <p class="description1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus voluptatum repellendus debitis! Est voluptatum deserunt consequuntur ullam rerum provident.</p>
+      </div>
+      <div class="social-links">
+        <a class="instagram" href="https://instagram.com/cloner_79">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a class="linkedin" href="https://www.linkedin.com/in/">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a class="twitter" href="https://twitter.com/mamd_79">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+    </div>
+    </body>
+</html>

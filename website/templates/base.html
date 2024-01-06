@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="stylesheet" href="../static/css/homestyle.css">
+    <script src="../static/js/script.js"defer></script>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-plain.css" />
+<link rel= "stylesheet" href= url_for('static', filename='styles.css')>
+
+  <style>
+    .navbar-custom {
+      background-color: #93b2ff;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-nav .nav-link {
+      color: #333;
+      font-size: 1.2em;
+    }
+
+
+    footer {
+      padding: 10px 0;
+      color: #333;
+      font-size: 0.9em;
+      background-color: #93b2ff;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    html, body {
+      height: 100%;
+    }
+    .content {
+      min-height: calc(100% - 56px);
+    }
+  </style>
+</head>
+<body>
+
+ <nav>
+      <div class="sidebar-header">
+        <a class="logo-wrapper">
+          <img src="../static/assest/google.svg" alt="Logo">
+            <h2 class="hidden">Flask App</h2>
+        </a>
+        <button class="toggle-btn">
+          <img src="../static/assest/expand.svg" alt="expand button">
+        </button>
+      </div>
+
+
+      <div class="sidebar-links">
+        <a class="link " href="/">
+          <img src="../static/assest/home.svg" alt="">
+          <span class="hidden">Home</span>
+        </a>
+
+        <a class="link" href="/dashboard">
+          <img src="../static/assest/dashboard.svg" alt="">
+          <span class="hidden">Dashboard</span>
+        </a>
+        </li>
+        <a class="link active"  href="/Task-note">
+          <img src="../static/assest/tasks.svg" alt="">
+          <span class="hidden">Tasks</span>
+        </a>
+      <a class="link" href="/telegram">
+          <img src="../static/assest/telegram.svg" alt="">
+          <span class="hidden">Telegram </span>
+        </a>
+      </div>
+
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-links">
+
+          <a class="link" href="/setting">
+            <img src="../static/assest/settings.svg" alt="">
+            <span class="hidden">Settings</span>
+          </a>
+                <a class="link" href="/logout">
+          <img src="../static/assest/logout.svg" alt="">
+          <span class="hidden">Logout</span>
+        </a>
+        </div>
+
+        <div class="user-profile">
+          <div class="user-avatar">
+            <img src="../static/assest/profile-pic2.jpg" alt="">
+          </div>
+          <div class="user-details hidden">
+            <p class="username">{{ user.first_name }}</p>
+            <p class="user-email">{{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<div class="container content" style="margin-top: 80px; padding-bottom: 56px;">{% block content %}{% endblock %}</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+{% block javascript %}
+<script type="text/javascript">
+      function deleteNote(noteId) {
+  fetch("/delete-note", {
+    method: "POST",
+    body: JSON.stringify({ noteId: noteId }),
+  }).then((_res) => {
+    window.location.href = "/task";
+  });
+  }
+
+
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+
+{% endblock %}
+
+</body>
+</html>

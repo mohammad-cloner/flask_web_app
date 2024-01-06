@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Send to telegram </title>
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+ <link rel="stylesheet" href="../static/css/homestyle.css">
+    <script src="../static/js/script.js"defer></script>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-plain.css" />
+<link rel= "stylesheet" href= url_for('static', filename='styles.css')>
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+    <link rel="stylesheet" href="../static/css/homestyle.css">
+    <script src="../static/js/script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="sidebar-header">
+        <a class="logo-wrapper">
+          <img src="../static/assest/google.svg" alt="Logo">
+            <h2 class="hidden">Flask App</h2>
+        </a>
+        <button class="toggle-btn">
+          <img src="../static/assest/expand.svg" alt="expand button">
+        </button>
+      </div>
+
+
+      <div class="sidebar-links">
+        <a class="link " href="/">
+          <img src="../static/assest/home.svg" alt="">
+          <span class="hidden">Home</span>
+        </a>
+
+        <a class="link" href="/dashboard">
+          <img src="../static/assest/dashboard.svg" alt="">
+          <span class="hidden">Dashboard</span>
+        </a>
+        </li>
+        <a class="link"  href="/Task-note">
+          <img src="../static/assest/tasks.svg" alt="">
+          <span class="hidden">Tasks</span>
+        </a>
+      <a class="link active">
+          <img src="../static/assest/telegram.svg" alt="">
+          <span class="hidden">Telegram </span>
+        </a>
+      </div>
+
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-links">
+
+          <a class="link" href="/setting">
+            <img src="../static/assest/settings.svg" alt="">
+            <span class="hidden">Settings</span>
+          </a>
+                <a class="link" href="/logout">
+          <img src="../static/assest/logout.svg" alt="">
+          <span class="hidden">Logout</span>
+        </a>
+        </div>
+
+        <div class="user-profile">
+          <div class="user-avatar">
+            <img src="../static/assest/profile-pic2.jpg" alt="">
+          </div>
+          <div class="user-details hidden">
+            <p class="username">{{ user.first_name }}</p>
+            <p class="user-email">{{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="parent-container">
+
+    <div class="container-task">
+      <div class="blog-task">
+
+        <div class="blog-context">
+          <div class="published">
+
+ <div >
+     <h6 class="title">  <img class='telimg' src="../static/assest/telegram.svg"alt="Telegram" width="10px" height="10px">Telegram send To Group </h6>
+
+<form method="POST"  id="note-form" >
+    <div class="form-input" >
+        <textarea name="note" id="note-text" class="input" rows="3" placeholder="Write a note for sending in Telegram @flasktotel"></textarea>
+    </div>
+                  <button class="telbt" type="submit"> <img src="../static/assest/telegram.svg" alt=""> send to telegram </button>
+
+  </form>
+
+     <script>
+
+document.getElementById('note-form').onsubmit = function(event) {
+  event.preventDefault();
+  var noteText = document.getElementById('note-text').value;
+  var username = document.getElementsByClassName('username');
+  fetch('/send-to-telegram', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ message: noteText ,username}),
+  })
+ .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      clearAndAlert('your note send to Telegram  https://t.me/flasktotel Succesfully ')
+    } else {
+      clearAndAlert('EROR yor note dont send')
+    }
+
+  });
+};
+function clearAndAlert(message) {
+  document.getElementById('note-text').value = '';
+  alert(message);
+}
+
+
+</script>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+    </div>
+</div>
+  </body>
+</html>

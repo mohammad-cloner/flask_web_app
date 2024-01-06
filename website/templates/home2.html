@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Home </title>
+    <link rel="stylesheet" href="../static/css/homestyle.css">
+    <script src="../static/js/script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="sidebar-header">
+        <a class="logo-wrapper">
+          <img src="../static/assest/google.svg" alt="Logo">
+            <h2 class="hidden">Flask App</h2>
+        </a>
+        <button class="toggle-btn">
+          <img src="../static/assest/expand.svg" alt="expand button">
+        </button>
+      </div>
+
+
+      <div class="sidebar-links">
+        <a class="link active" href="/">
+          <img src="../static/assest/home.svg" alt="">
+          <span class="hidden">Home</span>
+        </a>
+
+        <a class="link" href="/dashboard">
+          <img src="../static/assest/dashboard.svg" alt="">
+          <span class="hidden">Dashboard</span>
+        </a>
+        </li>
+        <a class="link"  href="/Task-note">
+          <img src="../static/assest/tasks.svg" alt="">
+          <span class="hidden">Tasks</span>
+        </a>
+      <a class="link" href="/telegram">
+          <img src="../static/assest/telegram.svg" alt="">
+          <span class="hidden">Telegram </span>
+        </a>
+      </div>
+
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-links">
+
+          <a class="link" href="/setting">
+            <img src="../static/assest/settings.svg" alt="">
+            <span class="hidden">Settings</span>
+          </a>
+                <a class="link" href="/logout">
+          <img src="../static/assest/logout.svg" alt="">
+          <span class="hidden">Logout</span>
+        </a>
+        </div>
+
+        <div class="user-profile">
+          <div class="user-avatar">
+            <img src="../static/assest/profile-pic2.jpg" alt="">
+          </div>
+          <div class="user-details hidden">
+            <p class="username">{{ user.first_name }}</p>
+            <p class="user-email">{{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+<div class="maincont">
+  <div class="container">
+      <div class="blog-card">
+        <div class="blog-image">
+          <img src="../static/assest/plant-pencil-near-notebook.jpg" alt="">
+        </div>
+        <div class="blog-content">
+          <div class="published">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+              <line x1="16" x2="16" y1="2" y2="6" />
+              <line x1="8" x2="8" y1="2" y2="6" />
+              <line x1="3" x2="21" y1="10" y2="10" />
+            </svg>
+            <p>01 jan, 2024</p>
+          </div>
+            <h6 class="title">Write your Notes in this web </h6>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus voluptatum repellendus debitis! Est voluptatum deserunt consequuntur ullam rerum provident.</p>
+          <div class="info">
+            <div class="tags">
+
+            </div>
+              <button onclick="location.href='/task';">Go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+ <div class="container">
+      <div class="blog-card">
+        <div class="blog-image">
+          <img src="../static/assest/telegrampic2.jpg" alt="">
+        </div>
+        <div class="blog-content">
+          <div class="published">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+              <line x1="16" x2="16" y1="2" y2="6" />
+              <line x1="8" x2="8" y1="2" y2="6" />
+              <line x1="3" x2="21" y1="10" y2="10" />
+            </svg>
+            <p>04 jan, 2024</p>
+          </div>
+            <h6 class="title"> send context to telegram with Bot</h6>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus voluptatum repellendus debitis! Est voluptatum deserunt consequuntur ullam rerum provident.</p>
+          <div class="info">
+            <div class="tags">
+
+            </div>
+              <button onclick="location.href='/telegram';">Go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+  </body>
+</html>
