@@ -26,9 +26,9 @@ os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json")
 
-GOOGLE_CLIENT_ID = "10822288791-sh3pnsj1s9nqapsc3hqqjgbppomnvf6o.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET = "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"
-TELEGRAM_BOT_TOKEN = '6919607121:AAGCox6XvYbZfkcvmQyXiiobJi6oPm-49xo'
+GOOGLE_CLIENT_ID = "*******************************.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET = "************************"
+TELEGRAM_BOT_TOKEN = '***********************-******'
 TELEGRAM_CHAT_ID = '-1002121162552'
 
 
